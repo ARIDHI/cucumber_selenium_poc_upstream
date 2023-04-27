@@ -1,4 +1,12 @@
-name: Cucumber-Selenium-Java-Workflow
+!
+
+2 / 2
+
+To set the source version to 20 in a GitHub Actions workflow for a Cucumber Selenium project built with Maven, you can use the following YAML code as an example:
+
+yaml
+Copy code
+name: Cucumber Selenium Tests
 
 on:
   push:
@@ -6,20 +14,19 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-      
-    - name: Set up JDK 11
-      uses: actions/setup-java@v3.10.0
-      with:
-        distribution: 'openJdk'
-        java-version: '11'
-      
-    - name: Build with Maven
-      run: mvn -B clean package -DskipTests
-      
-    - name: Run cucumber for upastream poc
-      run: mvn test
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+      - name: Build with Maven
+        run: mvn clean package
+        env:
+          JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+      - name: Run Cucumber tests
+        run: mvn test 
+        env:
+          JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
