@@ -169,7 +169,6 @@ public class contactStepDefinition {
     }
 
 
-
     @Given("I have select invalid data")
     public void i_have_entered_data_exclude_message_text(){
         if(send_request_to_end_point().getStatusCode() == 200) {

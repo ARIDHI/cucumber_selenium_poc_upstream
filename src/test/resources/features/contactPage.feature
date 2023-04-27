@@ -4,7 +4,6 @@ Feature: Contact Functionality for demo upStream Website
   Background:
     Given I am on the contact page
 
-  @ignoreBackground
   Scenario: Successful get data from end point API
     Given I send a request to end point
     When  I get response
