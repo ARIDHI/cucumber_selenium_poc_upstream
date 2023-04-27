@@ -1,12 +1,4 @@
-!
-
-2 / 2
-
-To set the source version to 20 in a GitHub Actions workflow for a Cucumber Selenium project built with Maven, you can use the following YAML code as an example:
-
-yaml
-Copy code
-name: Cucumber Selenium Tests
+name: Cucumber Selenium Upstream poc
 
 on:
   push:
