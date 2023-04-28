@@ -3,7 +3,7 @@ name: Cucumber Selenium Upstream poc
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   test:
