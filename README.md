@@ -24,3 +24,6 @@ Clone the repository:
 #Pipline
 github action
 
+#branch
+main
+develop
