@@ -1,10 +1,10 @@
 name: Cucumber Selenium Upstream poc
 
 on:
-  push:
+  pull_request:
     branches:
       - main
-      - Pull Request
+      - develop
 
 jobs:
   test:
