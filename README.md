@@ -23,7 +23,3 @@ Clone the repository:
 ``` mvn clean test ```
 #Pipline
 github action
-
-#branch
-main
-develop
