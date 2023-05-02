@@ -1,6 +1,4 @@
-Feature: Contact Functionality for demo upStream Website
-
-
+Feature: Contact Functionality 
   Background:
     Given I am on the contact page
 

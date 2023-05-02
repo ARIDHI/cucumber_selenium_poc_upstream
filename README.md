@@ -22,7 +22,3 @@ Clone the repository:
 
 # Run the tests with Maven:
 ``` mvn clean test ```
-
-# Pipline
-''' github action on push '''
-
