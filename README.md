@@ -1,15 +1,16 @@
 # Cucumber7.xTestNGLatestPOC
 Cucumber7.xTestNGLatestPOC
 
-This repository contains a Proof of Concept (POC) for running Cucumber tests in using TestNG with Cucumber 7.x. The project upstreampoc how to set up and configure your test framework to execute Cucumber scenarios in parallel with TestNG.
+This repository contains a Proof of Concept (POC) for running Cucumber tests in using TestNG with Cucumber 7.x. The project upstreampoc how to set up and configure your test framework to execute Cucumber scenarios 
+with TestNG.
 
 # Prerequisites
 Java 11 or higher
 Maven 3.x
 
 # Project Structure
-  OOP 
-  Approche BDD
+  ''' OOP '''
+  ''' Approche BDD '''
 
 # Usage
 Clone the repository:
@@ -21,5 +22,3 @@ Clone the repository:
 
 # Run the tests with Maven:
 ``` mvn clean test ```
-#Pipline
-github action

@@ -40,7 +40,7 @@ Feature: Contact Functionality
       | Alert                     |  |  |
       | Veuillez remlir ce champ. |  |  |
 
-  Scenario Outline: Forget required company,mobile and title
+  Scenario Outline: Forget unrequired company,mobile and title
     Given I have entered data exclude company, mobile and title
     When I click on the submit button
     Then I should see a validation message indicating "<success_message>"
@@ -48,7 +48,7 @@ Feature: Contact Functionality
       | success_message          |  |  |
       | Le message a été envoyé. |  |  |
 
-  Scenario Outline: retry user validation after error process
+  Scenario Outline: retry user validation after an error
     Given I have forget required user data
     When I click on the submit button
     And I add the forgotten user data
