@@ -34,7 +34,7 @@ public class contactStepDefinition {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
-        driver = new ChromeDriver(optionsgi);
+        driver = new ChromeDriver(options);
     }
     @After
     public void tearDown(){
