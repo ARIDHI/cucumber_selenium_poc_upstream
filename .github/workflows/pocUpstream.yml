@@ -16,7 +16,7 @@ jobs:
         with:
          script: |
              const command = process.env.SLACK_COMMAND;
-             const validCommand = '/run-tests'; // Customize the command name
+             const validCommand = 'run-tests'; // Customize the command name
 
              if (command !== validCommand) {
               throw new Error(`Invalid command: ${command}`);
