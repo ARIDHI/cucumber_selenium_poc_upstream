@@ -3,22 +3,30 @@ name: Cucumber Selenium Upstream poc
 on:
   repository_dispatch:
     types: [slack]
+
     
 jobs:
   test:
+  
     runs-on: ubuntu-latest
-    steps:
+    steps:  
+         
+      - name: Check Slack command
+        id: check_slack
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const command = process.env.SLACK_COMMAND;
+            const slackPayload = JSON.parse(process.env.SLACK_PAYLOAD);
+            const validCommand = 'run'; // Customize the command name
+
+            if (command !== validCommand) {
+              throw new Error(`Invalid command: ${command}`);
+            }
+            
       - name: checkout Repo
       - uses: actions/checkout@v2
-      
-      - name: Trigger workflow
-        run: |
-          curl -X POST \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github.everest-preview+json" \
-            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/pocUpstream.yml/dispatches" \
-            -d '{"ref":"main", "inputs": {"input1": "Run test", "input2": "QA bot"}}'
-            
+  
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
