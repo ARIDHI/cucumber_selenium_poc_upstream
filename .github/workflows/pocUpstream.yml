@@ -1,7 +1,11 @@
 name: Cucumber Selenium Upstream poc
 
-on: [push ,pull_request]
-
+on:
+  workflow_dispatch:
+    inputs:
+      slack_message:
+        description: 'run test'
+        required: true
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -12,7 +16,7 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
-          
+       
       - name: Run Cucumber tests
         run: mvn clean test
         
