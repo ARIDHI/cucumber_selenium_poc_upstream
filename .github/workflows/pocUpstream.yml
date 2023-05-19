@@ -12,8 +12,16 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
+          
       - name: Run Cucumber tests
         run: mvn clean test
+        
+      - name: Publish Cucumber HTML Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Cucumber-Report
+          path: target/cucumber-reports
+          
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
