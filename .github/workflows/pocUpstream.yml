@@ -13,8 +13,6 @@ jobs:
       
       - name: Trigger workflow
         run: |
-          # Perform any necessary setup or validation based on the Slack command and channel
-          # Trigger the desired workflow using the GitHub Actions API
           curl -X POST \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github.everest-preview+json" \
