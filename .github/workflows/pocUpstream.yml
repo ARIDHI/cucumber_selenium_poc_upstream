@@ -1,11 +1,9 @@
 name: Cucumber Selenium Upstream poc
 
 on:
-  workflow_dispatch:
-    inputs:
-      slack_message:
-        description: 'run test'
-        required: true
+ repository_dispatch:
+    types:
+      - slack
 jobs:
   test:
     runs-on: ubuntu-latest
