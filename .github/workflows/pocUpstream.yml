@@ -1,6 +1,8 @@
 name: Cucumber Selenium Upstream poc
 
-on: [push ,pull_request]
+on: 
+ repository_dispatch:
+    types: [slack ]
 
 jobs:
   test:
