@@ -1,24 +1,27 @@
 name: Cucumber Selenium Upstream poc
 
-on: 
- repository_dispatch:
-    types: [slack]
+on:
+  repository_dispatch:
+    types:
+      - slack
 
 jobs:
-  test:
+  cucumber-tests:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check Slack command
+        id: check_slack
         uses: actions/github-script@v4
         with:
           script: |
             const command = process.env.SLACK_COMMAND;
-            const slackPayload = JSON.parse(process.env.SLACK_PAYLOAD);
             const validCommand = '/run-tests'; // Customize the command name
 
             if (command !== validCommand) {
               throw new Error(`Invalid command: ${command}`);
             }
+            
       - name: checkout branch
       - uses: actions/checkout@v2
       - name: Set up JDK 11
