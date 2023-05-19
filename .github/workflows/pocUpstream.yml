@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check Slack command
-        id: check_slack
         uses: actions/github-script@v4
         with:
           script: |
