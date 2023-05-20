@@ -1,4 +1,4 @@
-name: Cucumber Selenium Upstream poc
+name: Manual triggering test
 
 on:
   workflow_dispatch:
