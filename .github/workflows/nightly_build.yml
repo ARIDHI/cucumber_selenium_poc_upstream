@@ -1,1 +1,42 @@
 name: Nightly build - Continus Testing
+
+on:
+  schedule:
+    - cron: '0 00 * * 1'
+jobs:
+  cucumber-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout branch
+        uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+          
+      - name: Run Cucumber tests
+        run: mvn clean test
+        
+      - name: Publish Cucumber HTML Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Core plugin automation report
+          path: target/cucumber-reports
+          
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: QA Team
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MSG_AUTHOR: "Please find here automation test report."
+          SLACK_TITLE: Core plugin reporting test
+          SLACK_COLOR: ${{job.status}}
+          SLACK_FOOTER: 'Upstream QA Team. Regars !'
+
+
+
+
+         
