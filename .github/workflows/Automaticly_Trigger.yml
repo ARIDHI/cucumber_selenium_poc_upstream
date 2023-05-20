@@ -1,4 +1,4 @@
-name: Pushing Trigger Test
+name: Automaticly Trigger Test
 
 on: [push ,pull_request]
 
