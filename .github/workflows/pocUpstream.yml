@@ -47,3 +47,5 @@ jobs:
           SLACK_MSG_AUTHOR: "Please fin here automation test report. Regards"
           SLACK_TITLE: Core plugin reporting test
           SLACK_COLOR: ${{job.status}}
+          file: target/cucumber-reports
+         
