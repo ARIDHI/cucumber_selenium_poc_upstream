@@ -1,4 +1,4 @@
-name: Cucumber Selenium Upstream poc
+name: Pushing Trigger Test
 
 on: [push ,pull_request]
 
