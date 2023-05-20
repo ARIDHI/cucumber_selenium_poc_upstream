@@ -32,5 +32,25 @@ jobs:
           SLACK_MSG_AUTHOR: "Please fin here automation test report. Regards"
           SLACK_TITLE: Core plugin reporting test
           SLACK_COLOR: ${{job.status}}
+          attachments: |
+            [
+              {
+                "fallback": "Cucumber Report",
+                "color": "#36a64f",
+                "title": "Cucumber Report",
+                "title_link": "https://github.com/cucumber_selenium_poc_upstream/runs/${{ github.run_id }}",
+                "fields": [
+                  {
+                    "title": "Summary",
+                    "value": "Cucumber test results summary"
+                  }
+                ]
+              }
+            ]
           file: target/cucumber-reports
+
+
+
+
+
          
